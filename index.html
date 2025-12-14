@@ -1,1 +1,170 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday My Love 💕</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- PAGE 1 -->
+  <div class="page" id="page1">
+    <div class="card">
+      <h1>HI, LOVE!</h1>
+      <p>Do you want to see a little surprise for you?</p>
+      <img src="images/IMG.page_1.png" alt="surprise" class="avatar" />
+
+      <div class="button-group">
+        <button class="choice-button" id="yesButton" onclick="selectAnswer('yes')">YES!!</button>
+        <button class="choice-button" id="noButton" onclick="selectAnswer('no')">NO, THANKS</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page hidden" id="page2">
+    <div class="card">
+      <h2>💭 คำถามแรก</h2>
+      <p>วันที่เราเจอกันครั้งแรก คือวันที่เท่าไร?</p>
+
+      <div class="date-picker">
+        <select id="day"><option value="">วัน</option></select>
+        <select id="month">
+          <option value="">เดือน</option>
+          <option value="1">มกราคม</option>
+          <option value="2">กุมภาพันธ์</option>
+          <option value="3">มีนาคม</option>
+          <option value="4">เมษายน</option>
+          <option value="5">พฤษภาคม</option>
+          <option value="6">มิถุนายน</option>
+          <option value="7">กรกฎาคม</option>
+          <option value="8">สิงหาคม</option>
+          <option value="9">กันยายน</option>
+          <option value="10">ตุลาคม</option>
+          <option value="11">พฤศจิกายน</option>
+          <option value="12">ธันวาคม</option>
+        </select>
+        <select id="year"><option value="">ปี</option></select>
+      </div>
+
+      <button class="submit-button" onclick="checkDate()">ยืนยัน 💕</button>
+      <p id="error-message" class="error-message"></p>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page hidden" id="page3">
+    <div class="card tiktok-card">
+      <div class="step-pill">STEP 2</div>
+
+      <h2 class="tiktok-title">Reasons Why I Love You</h2>
+      <p class="tiktok-sub">Tap each heart to reveal one reason.</p>
+
+      <div class="progress-wrap">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <div class="progress-text" id="progressText">0 / 5 revealed</div>
+
+      <!-- ใส่รายการไว้ใน HTML เลย (กดได้ชัวร์) -->
+      <div class="reasons-list" id="reasonsList">
+        <button type="button" class="reason-item btn-item">
+          <span class="heart-btn" aria-hidden="true"><span class="heart-icon">💗</span></span>
+          <span class="reason-main">
+            <span class="reason-title">ความทุ่มเท</span>
+            <span class="reason-detail">เป็นคนที่่ทุ่มเทยอมไปรับไปส่งไม่ว่าบ้านตัวเองจะไกลก็ไหน ถึงแม้ว่าจะใช้เวลาเดินทางกลับเป็นชั่วโมงก็ไปส่ง</span>
+          </span>
+        </button>
+
+        <button type="button" class="reason-item btn-item">
+          <span class="heart-btn" aria-hidden="true"><span class="heart-icon">💗</span></span>
+          <span class="reason-main">
+            <span class="reason-title">ความอ่อนโยนของคุณ</span>
+            <span class="reason-detail">ถ้าแม้ว่าจะเป็นคนแข็งๆไปบ้างแต่พอยิ้มหรือดีใจก็มีความน่ารักน่าเอ็นดู ><</span>
+          </span>
+        </button>
+
+        <button type="button" class="reason-item btn-item">
+          <span class="heart-btn" aria-hidden="true"><span class="heart-icon">💗</span></span>
+          <span class="reason-main">
+            <span class="reason-title">อารมณ์ขันของคุณ</span>
+            <span class="reason-detail">เป็นคนที่เห็นภายนอกแล้วจะเป็นคนขึมๆเครียดๆแต่พอโดนเส้นเท่านั้นแหละขำยาวเลยทีนี้5544545645</span>
+          </span>
+        </button>
+
+        <button type="button" class="reason-item btn-item">
+          <span class="heart-btn" aria-hidden="true"><span class="heart-icon">💗</span></span>
+          <span class="reason-main">
+            <span class="reason-title">ความงามของคุณ</span>
+            <span class="reason-detail">เป็นคนที่สามารถแต่งได้หลายแบบไม่ว่าจะน่ารักๆ ก็ได้แบบเข้มๆคมๆก็ดี หรือไม่ว่าคอสเพลย์ ละจะไม่ให้ชอบได้ไงครับเนี่ย!!</span>
+          </span>
+        </button>
+
+        <button type="button" class="reason-item btn-item">
+          <span class="heart-btn" aria-hidden="true"><span class="heart-icon">💗</span></span>
+          <span class="reason-main">
+            <span class="reason-title">ความรักของเรา</span>
+            <span class="reason-detail">ถึงแม้ว่าจะทะเลาะกันบ้างบ้างครั้งผิดใจกันบ้างมีร้องไห้เสียใจกับ้าง มีใส่อารมกันบ้างหงุดหงิดกันบ้างแต่ก็อยากบอกให้รู้ไว้ว่ายังรักแและห่วงใยอยู่เสมอๆ จุ๊บๆ </span>
+          </span>
+        </button>
+      </div>
+
+      <button class="next-pill" id="reasonsNext" disabled onclick="showPage(3)">
+        Our Future <span class="arrow">→</span>
+      </button>
+    </div>
+  </div>
+
+<!-- PAGE 4 : FINAL COLLAGE -->
+<div class="page hidden" id="page4">
+  <div class="card collage-card">
+
+    <div class="collage-board">
+      <!-- รูป 1 -->
+      <div class="photo p1">
+        <img src="images/IMG.page_4/1.jpg" />
+      </div>
+
+      <!-- รูป 2 -->
+      <div class="photo p2">
+        <img src="images/IMG.page_4/2.jpg" />
+      </div>
+
+      <!-- รูป 3 -->
+      <div class="photo p3">
+        <img src="images/IMG.page_4/3.jpg" />
+      </div>
+
+      <!-- รูป 4 -->
+      <div class="photo p4">
+        <img src="images/IMG.page_4/4.jpg" />
+      </div>
+
+      <!-- รูป 5 -->
+      <div class="photo p5">
+        <img src="images/IMG.page_4/5.jpg" />
+      </div>
+
+      <!-- ข้อความ -->
+      <div class="birthday-text">
+        <span>HAPPY</span>
+        <span>birthday</span>
+      </div>
+    </div>
+
+    <p class="final-message">
+      ขอบคุณที่เข้ามาเป็นโลกทั้งใบของชั้น 💖
+    </p>
+
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
