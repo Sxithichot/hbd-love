@@ -362,3 +362,34 @@ h2 { color: #d08383; }
   font-size: 1em;
   color: #8b5a5a;
 }
+/* ===== PAGE 5 : FINAL MESSAGE (เหมือนรูป) ===== */
+.final-wrap{
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.final-card{
+  background: rgba(255,255,255,0.86);
+  border-radius: 16px;
+  padding: 22px 34px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+  backdrop-filter: blur(10px);
+  animation: fadeUp .7s ease;
+}
+
+.final-text{
+  margin: 0;
+  text-align: center;
+  color: #6b4b4b;
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+
+@keyframes fadeUp{
+  from{ opacity:0; transform: translateY(14px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+
+
